@@ -135,7 +135,7 @@ class dlitesession {
                 return result;
             })
             .catch(err => {
-                this.session?.topicUpdate.set(topic, diffusion.datatypes.string(), data, { specification : this.specification });
+                return this.session?.topicUpdate.set(topic, diffusion.datatypes.string(), data, { specification : this.specification });
             });
     }
 
