@@ -56,7 +56,9 @@ function _setupCallbacks(dliteSession, session, options) {
             }
             console.log('DO FAILOVER:', failover);
             if(failover) {
-                let new_session = await _connect(options); // TODO: Does not affect the returned dliteSession !!!
+                let new_session = await _connect(options);
+                // TODO: Does not affect the returned dliteSession !!!
+                // TODO: Reissue subscriptions
                 _setupCallbacks(dliteSession, new_session, options);
                 dliteSession.setSession(new_session);
             }
