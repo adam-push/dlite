@@ -120,7 +120,11 @@ class dlitesession {
     id() {
         return this.session.sessionID;
     }
-    
+
+    session() {
+        return this.session;
+    }
+
     async publish(topic, data) {
         if(typeof data === 'object') {
             data = JSON.stringify(data);
